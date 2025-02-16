@@ -39,4 +39,11 @@
   .shop-button:hover {
     background-color: rgb(150, 10, 10);
   }
+  .merch-example {
+    width: 90%; /* Adjust width as needed */
+    max-width: 600px; /* Prevents it from getting too large */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Ensures proper spacing */
+    margin: 0 auto; /* Centers the image */
+  }
   

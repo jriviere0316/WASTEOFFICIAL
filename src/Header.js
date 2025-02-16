@@ -7,6 +7,7 @@ import {
   FaXTwitter,
 } from "react-icons/fa6";
 import "./Header.css"; // Single CSS file for both components
+import wasteLogo from "./Assets/wasteLogoBlack.png"; // Import the logo
 
 function Header() {
   return (
@@ -33,13 +34,13 @@ function Header() {
             </a>
           </li>{" "}
           <li>
-              <a
+            <a
               href="https://www.youtube.com/watch?v=2pG2s2qdYw4"
               target="_blank"
               rel="noopener noreferrer"
-              >
+            >
               <FaYoutube />
-              </a>
+            </a>
           </li>{" "}
           {/* <li>
             <Link to="/x">
@@ -59,7 +60,9 @@ function Header() {
             <Link to="/Merch">Shop</Link>
           </li>
           <li>
-            <Link to="/">WASTE</Link>
+            <Link to="/">
+              <img src={wasteLogo} alt="WASTE Logo" className="nav-logo" />
+            </Link>
           </li>
           <li>
             <Link to="/Music">Music</Link>

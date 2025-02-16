@@ -6,9 +6,7 @@ const Hero = () => {
     <div className="hero">
       <div className="overlay"></div>
       <div className="content">
-        <h1>WASTE</h1>
-        <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
-        <p>In Decay Out Now</p>
+        <h1>IN DECAY OUT NOW</h1>
       </div>
     </div>
   );

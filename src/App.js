@@ -1,50 +1,46 @@
-import './App.css';
+import "./App.css";
 // import NavBar from './NavBar';
-import Header from './Header';
+import Header from "./Header";
 // import Socials from './Socials';
-import Hero from './Hero';
+import Hero from "./Hero";
 import VideoSection from "./VideoSection";
 import Music from "./Music";
 import Merch from "./Merch";
 import Shows from "./Shows";
 
-
-
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <Router>
-      
-    {/* Render the Navbar on all pages */}
-    <Header /> {/* Replace <Socials /> and <NavBar /> with this */}
+      {/* Render the Navbar on all pages */}
+      <Header />
+      <div className="main-content">
+        {" "}
+        {/* Wrap all components in this div */}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <VideoSection />
+                <Music />
+                <Merch />
+                <Shows />
+              </>
+            }
+          />
+          <Route path="/music" element={<Music />} />
 
+          <Route path="./Music"></Route>
+          <Route path="/merch" element={<Merch />} />
+          <Route path="/shows" element={<Shows />} />
+        </Routes>
+      </div>
 
-    <Routes>
-      <Route path="/"  
-        element={
-            <>
-              <Hero />
-              <VideoSection />
-              <Music />
-              <Merch />
-              <Shows />
-              
-            </>
-          } />
-      <Route path="/music" element={<Music />} />
-
-      <Route path='./Music'></Route>
-      <Route path="/merch" element={<Merch />} />
-      <Route path="/shows" element={<Shows />} />
-
-
-    </Routes>
-
-    {/* Define routes for different pages */}
-  </Router>
-  
+      {/* Define routes for different pages */}
+    </Router>
   );
 }
 
