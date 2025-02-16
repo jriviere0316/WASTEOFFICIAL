@@ -41,11 +41,11 @@ function Header() {
               <FaYoutube />
               </a>
           </li>{" "}
-          <li>
+          {/* <li>
             <Link to="/x">
               <FaXTwitter />
             </Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
 
