@@ -1,24 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+// import NavBar from './NavBar';
+import Header from './Header';
+// import Socials from './Socials';
+import Hero from './Hero';
+import VideoSection from "./VideoSection";
+import Music from "./Music";
+import Merch from "./Merch";
+import Shows from "./Shows";
+
+
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      
+    {/* Render the Navbar on all pages */}
+    <Header /> {/* Replace <Socials /> and <NavBar /> with this */}
+
+
+    <Routes>
+      <Route path="/"  
+        element={
+            <>
+              <Hero />
+              <VideoSection />
+              <Music />
+              <Merch />
+              <Shows />
+              
+            </>
+          } />
+      <Route path="/music" element={<Music />} />
+
+      <Route path='./Music'></Route>
+      <Route path="/merch" element={<Merch />} />
+      <Route path="/shows" element={<Shows />} />
+
+
+    </Routes>
+
+    {/* Define routes for different pages */}
+  </Router>
+  
   );
 }
 
