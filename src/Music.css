@@ -6,35 +6,111 @@
     padding: 50px 20px;
     background-color: black;
     color: white;
-  }
-  
-  h2 {
+}
+
+h2 {
     font-size: 2rem;
     margin-bottom: 20px;
-  }
-  
-  .spotify-embed {
+}
+
+/* ============================== */
+/* ALBUM COVERS (2x2 GRID) */
+/* ============================== */
+.album-covers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 15px; /* Space between albums */
+    margin-bottom: 20px; /* Spacing before Spotify player */
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* Adjusts grid container width */
+}
+
+.album-img {
+    width: 100%; /* Full width of the grid cell */
+    max-width: 280px; /* Prevents images from getting too large */
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.album-img:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* ============================== */
+/* SPOTIFY PLAYER & BUTTONS */
+/* ============================== */
+.spotify-embed {
     width: 100%;
     max-width: 600px;
     margin-bottom: 20px;
-  }
-  
-  .apple-music {
-    margin-top: 10px;
-  }
-  
-  .apple-button {
-    display: inline-block;
+}
+
+/* Ensure button container has proper spacing */
+.music-buttons {
+    display: flex;
+    justify-content: center; /* Centers the buttons */
+    gap: 15px; /* Adds spacing between them */
+    width: 90%; /* Ensures they take full available space */
+    max-width: 500px; /* Matches Spotify embed width */
+    margin-top: 20px; /* Adds spacing to prevent overlap */
+    flex-wrap: wrap; /* Prevents overlap by allowing wrapping */
+}
+
+/* Ensure both divs take up equal space */
+.spotify-music,
+.apple-music {
+    flex: 1; /* Makes both divs the same width */
+    text-align: center; /* Centers button text */
+}
+
+/* Button Styles - Ensures Equal Height & Centered Text */
+.apple-button {
+    display: flex; /* Ensures text is centered */
+    align-items: center; /* Vertically centers text */
+    justify-content: center; /* Horizontally centers text */
+    /* margin-left: 0px; */
+    width: 80%; /* Ensures buttons are the same width */
+    height: 50px; /* Ensures equal height */
     padding: 10px 20px;
     background-color: rgb(194, 13, 13);
-    color: white;
+    color: rgb(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     transition: background 0.3s;
-  }
-  
-  .apple-button:hover {
+    white-space: nowrap; /* Prevents text from wrapping */
+}
+
+/* Hover effect */
+.apple-button:hover {
     background-color: rgb(150, 10, 10);
-  }
-  
+}
+
+/* ============================= */
+/* MOBILE RESPONSIVENESS */
+/* ============================= */
+@media (max-width: 600px) {
+    .album-covers {
+        grid-template-columns: 1fr; /* Switch to a single column on mobile */
+    }
+
+    .album-img {
+        width: 80%; /* Make images larger when stacked */
+        max-width: 300px;
+    }
+
+    /* Stack buttons vertically on small screens */
+    .music-buttons {
+        flex-direction: column;
+        gap: 20px; /* Spacing between stacked buttons */
+        max-width: 300px; /* Prevents overly wide buttons */
+    }
+
+    .apple-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}

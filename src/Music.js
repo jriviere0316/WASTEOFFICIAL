@@ -1,10 +1,22 @@
 import React from "react";
 import "./Music.css";
+import album1 from "./Assets/PFNART.jpeg";
+import album2 from "./Assets/INBLOOMART.jpg";
+import album3 from "./Assets/INDECAYART.jpg";
+import album4 from "./Assets/COHART.jpg";
 
 function Music() {
   return (
     <div className="music-container">
       <h2>Listen to WASTE</h2>
+
+      {/* Album Covers */}
+      <div className="album-covers">
+        <img src={album2} alt="Middle Album" className="album-img" />
+        <img src={album3} alt="Old Album" className="album-img" />
+        <img src={album1} alt="Newest Album" className="album-img" />
+        <img src={album4} alt="Oldest Album" className="album-img" />
+      </div>
 
       {/* Spotify Embed */}
       <div className="spotify-embed">
@@ -20,27 +32,28 @@ function Music() {
       </div>
 
       {/* Spotify Button */}
-      <div className="spotify-music">
-        <a
-          href="https://tinyurl.com/wastespotify"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="apple-button"
-        >
-          Listen on Spotify
-        </a>
-      </div>
-      
-      {/* Apple Music Button */}
-      <div className="apple-music">
-        <a
-          href="https://tinyurl.com/wasteapple"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="apple-button"
-        >
-          Listen on Apple Music
-        </a>
+      <div className="music-buttons">
+        <div className="spotify-music">
+          <a
+            href="https://tinyurl.com/wastespotify"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="apple-button"
+          >
+            Listen on Spotify
+          </a>
+        </div>
+
+        <div className="apple-music">
+          <a
+            href="https://tinyurl.com/wasteapple"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="apple-button"
+          >
+            Listen on Apple Music
+          </a>
+        </div>
       </div>
     </div>
   );

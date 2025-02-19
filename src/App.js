@@ -25,8 +25,8 @@ function App() {
               <>
                 <Hero />
                 <VideoSection />
-                <Music />
                 <Merch />
+                <Music />
                 <Shows />
               </>
             }
